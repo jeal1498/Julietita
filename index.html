@@ -92,7 +92,7 @@
 
         body {
             font-family: 'Nunito', 'Segoe UI', system-ui, sans-serif;
-            background-color: #FFF5F7;
+            background-color: transparent;
             overscroll-behavior-y: contain;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
@@ -104,11 +104,16 @@
             width: 100%; height: 100%;
             pointer-events: none;
             z-index: 0;
+            background-color: #FFF5F7;
         }
 
         body > *:not(#confetti-bg) {
             position: relative;
             z-index: 1;
+        }
+
+        section, footer, .wave-divider {
+            background-color: rgba(255, 245, 247, 0.82) !important;
         }
 
         html {
@@ -322,7 +327,7 @@
     <div id="toast" class="toast" role="alert" aria-live="polite"></div>
 
     <!-- ==================== SECCIÓN 1: HERO ==================== -->
-    <section id="hero" class="relative overflow-hidden bg-gradient-to-b from-[#FFF0F5] via-[#FFF5F7] to-white px-5 pt-8 pb-6 text-center">
+    <section id="hero" class="relative overflow-hidden px-5 pt-8 pb-6 text-center">
         <div class="absolute -top-6 -right-6 w-28 h-28 bg-dona-rosa rounded-full opacity-25 blur-2xl pointer-events-none"></div>
         <div class="absolute top-16 -left-8 w-20 h-20 bg-dorado rounded-full opacity-20 blur-2xl pointer-events-none"></div>
 
@@ -345,16 +350,59 @@
     <p class="text-xs text-gray-400 mt-4 animate-pulse">👇 Desliza hacia abajo</p>
 </section>
 
+<!-- ==================== SECCIÓN 2: ¿CÓMO FUNCIONA? ==================== -->
+<section class="px-5 py-8">
+    <div class="text-center mb-7">
+        <h2 class="text-2xl font-extrabold text-chocolate">📋 ¿Cómo Funciona?</h2>
+        <p class="text-sm text-chocolate-claro mt-2">Súper fácil, en 3 pasos</p>
+    </div>
+    <div class="flex flex-col gap-5 max-w-md mx-auto">
+        <div class="flex items-start gap-4 bg-white rounded-2xl p-5 shadow-sm animate-fade-in">
+            <div class="bg-dona-rosa text-dona-rosa-oscuro font-black text-xl w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">1</div>
+            <div>
+                <h3 class="font-extrabold text-chocolate text-lg">📱 Elige tu paquete</h3>
+                <p class="text-sm text-chocolate-claro mt-1">Selecciona abajo tu caja favorita y elige tus toppings.</p>
+            </div>
+        </div>
+        <div class="flex items-start gap-4 bg-white rounded-2xl p-5 shadow-sm animate-fade-in" style="animation-delay: 0.15s;">
+            <div class="bg-green-100 text-green-700 font-black text-xl w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">2</div>
+            <div>
+                <h3 class="font-extrabold text-chocolate text-lg">💬 Envía por WhatsApp</h3>
+                <p class="text-sm text-chocolate-claro mt-1">Da clic en el botón. Se abrirá tu chat con el pedido ya escrito. Dinos tu nombre.</p>
+            </div>
+        </div>
+        <div class="flex items-start gap-4 bg-white rounded-2xl p-5 shadow-sm animate-fade-in" style="animation-delay: 0.3s;">
+            <div class="bg-dorado text-white font-black text-xl w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">3</div>
+            <div>
+                <h3 class="font-extrabold text-chocolate text-lg">🛵 ¡Recoge sin filas!</h3>
+                <p class="text-sm text-chocolate-claro mt-1">Te avisamos cuando estén listas. Pasa al stand, paga en efectivo o transferencia, ¡y a disfrutar!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SECCIÓN 3: PROMO ==================== -->
+<section class="px-5 py-6">
+    <div class="max-w-md mx-auto bg-gradient-to-r from-red-50 via-yellow-50 to-red-50 border-2 border-red-200 rounded-2xl p-5 text-center relative overflow-hidden">
+        <div class="absolute -top-4 -right-4 text-4xl opacity-20 select-none pointer-events-none">🏆</div>
+        <span class="inline-block bg-red-500 text-white font-extrabold text-xs px-4 py-1.5 rounded-full mb-3 tracking-wider uppercase animate-pulse">🔥 Promo de la Feria</span>
+        <p class="font-extrabold text-chocolate text-lg leading-snug">
+            🏆 ¡Compra <span class="text-red-600">dos Cajas Antojo</span> (8 pzas) y llévate un <span class="text-dona-rosa-fuerte">topping extra gratis</span> en ambas!
+        </p>
+        <p class="text-xs text-gray-500 mt-2">*Válido durante la feria. Menciona la promo al pedir.</p>
+    </div>
+</section>
+
 <!-- ==================== ONDA DIVISORA ==================== -->
 <div class="wave-divider">
     <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
         <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-        fill="#ffffff" opacity="1"></path>
+        fill="rgba(255,255,255,0.82)" opacity="1"></path>
     </svg>
 </div>
 
-<!-- ==================== SECCIÓN 2: EL MENÚ MÁGICO ==================== -->
-<section id="menu" class="bg-white px-5 py-8 pb-4">
+<!-- ==================== SECCIÓN 4: EL MENÚ MÁGICO ==================== -->
+<section id="menu" class="px-5 py-8 pb-4">
     <div class="text-center mb-6">
         <span class="inline-block bg-dona-rosa text-dona-rosa-oscuro font-bold text-sm px-4 py-1.5 rounded-full mb-3 tracking-wide uppercase">
             Paso 1
@@ -570,44 +618,12 @@ onclick="seleccionarPaquete(this)" role="button" tabindex="0" aria-pressed="fals
 <div class="wave-divider rotate-180">
     <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
         <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-        fill="#FFF5F7" opacity="1"></path>
+        fill="rgba(255,245,247,0.82)" opacity="1"></path>
     </svg>
 </div>
 
-<!-- ==================== SECCIÓN 4: ¿CÓMO FUNCIONA? ==================== -->
-<section class="bg-crema px-5 py-8">
-    <div class="text-center mb-7">
-        <h2 class="text-2xl font-extrabold text-chocolate">📋 ¿Cómo Funciona?</h2>
-        <p class="text-sm text-chocolate-claro mt-2">Súper fácil, en 3 pasos</p>
-    </div>
-    <div class="flex flex-col gap-5 max-w-md mx-auto">
-        <div class="flex items-start gap-4 bg-white rounded-2xl p-5 shadow-sm animate-fade-in">
-            <div class="bg-dona-rosa text-dona-rosa-oscuro font-black text-xl w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">1</div>
-            <div>
-                <h3 class="font-extrabold text-chocolate text-lg">📱 Elige tu paquete</h3>
-                <p class="text-sm text-chocolate-claro mt-1">Selecciona arriba tu caja favorita y visualiza tus toppings.</p>
-            </div>
-        </div>
-        <div class="flex items-start gap-4 bg-white rounded-2xl p-5 shadow-sm animate-fade-in" style="animation-delay: 0.15s;">
-            <div class="bg-green-100 text-green-700 font-black text-xl w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">2</div>
-            <div>
-                <h3 class="font-extrabold text-chocolate text-lg">💬 Envía por WhatsApp</h3>
-                <p class="text-sm text-chocolate-claro mt-1">Da clic abajo. Se abrirá tu chat con el pedido ya escrito. Dinos tu nombre y toppings.</p>
-            </div>
-        </div>
-        <div class="flex items-start gap-4 bg-white rounded-2xl p-5 shadow-sm animate-fade-in" style="animation-delay: 0.3s;">
-            <div class="bg-dorado text-white font-black text-xl w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">3</div>
-            <div>
-                <h3 class="font-extrabold text-chocolate text-lg">🛵 ¡Recoge sin filas!</h3>
-                <p class="text-sm text-chocolate-claro mt-1">Te avisamos cuando estén listas. Pasa al stand, paga en efectivo o transferencia, ¡y a disfrutar!</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<!-- ==================== SECCIÓN 6: EQUIPO ==================== -->
-<section class="bg-crema px-5 py-8">
+<!-- ==================== SECCIÓN 7: EQUIPO ==================== -->
+<section class="px-5 py-8">
     <div class="text-center mb-6">
         <h2 class="text-2xl font-extrabold text-chocolate">Conoce al Equipo Detrás de la Magia 👧👦</h2>
         <p class="text-sm text-chocolate-claro mt-2">Los creadores de tus donitas favoritas</p>
@@ -645,20 +661,8 @@ onclick="seleccionarPaquete(this)" role="button" tabindex="0" aria-pressed="fals
     </div>
 </section>
 
-<!-- ==================== SECCIÓN 7: GANCHO DE VENTA Y CTA FINAL ==================== -->
-<section class="bg-white px-5 py-8 pb-2">
-    <div class="max-w-md mx-auto mb-6 bg-gradient-to-r from-red-50 via-yellow-50 to-red-50 border-2 border-red-200 rounded-2xl p-5 text-center relative overflow-hidden">
-        <div class="absolute -top-4 -right-4 text-4xl opacity-20 select-none pointer-events-none">🏆</div>
-        <span class="inline-block bg-red-500 text-white font-extrabold text-xs px-4 py-1.5 rounded-full mb-3 tracking-wider uppercase animate-pulse">🔥 Promo de la Feria</span>
-        <p class="font-extrabold text-chocolate text-lg leading-snug">
-            🏆 ¡Compra <span class="text-red-600">dos Cajas Antojo</span> (8 pzas) y llévate un <span class="text-dona-rosa-fuerte">topping extra gratis</span> en ambas!
-        </p>
-        <p class="text-xs text-gray-500 mt-2">*Válido durante la feria. Menciona la promo al pedir.</p>
-    </div>
-</section>
-
 <!-- ==================== FOOTER ==================== -->
-<footer class="bg-chocolate text-white px-5 py-6 text-center pb-28">
+<footer class="px-5 py-6 text-center pb-10" style="background-color: rgba(93,64,55,0.92) !important; color: white;">
     <p class="text-sm font-semibold">🍩 Donitas Mágicas</p>
     <p class="text-xs text-gray-300 mt-2 max-w-sm mx-auto leading-relaxed">
         Hecho con 💖 y mucha azúcar mágica por los niños de kínder de<br>
