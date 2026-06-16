@@ -244,24 +244,6 @@
             color: #fff;
         }
 
-        .sticky-cta-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            padding: 12px 16px;
-            padding-bottom: max(12px, env(safe-area-inset-bottom, 12px));
-            box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.1);
-            border-top: 2px solid #F8BBD0;
-            transition: transform 0.3s ease;
-        }
-        .sticky-cta-bar.hidden-bar {
-            transform: translateY(120%);
-        }
 
         .btn-cta-glow {
             position: relative;
@@ -623,33 +605,6 @@ onclick="seleccionarPaquete(this)" role="button" tabindex="0" aria-pressed="fals
     </div>
 </section>
 
-<!-- ==================== SECCIÓN 5: RESEÑAS ==================== -->
-<section class="bg-white px-5 py-8">
-    <div class="text-center mb-6">
-        <span class="inline-block bg-yellow-50 text-dorado-oscuro font-bold text-sm px-4 py-1.5 rounded-full mb-3 tracking-wide uppercase">⭐ ¡Tu opinión cuenta!</span>
-        <h2 class="text-2xl font-extrabold text-chocolate">Reseñas Mágicas</h2>
-    </div>
-    <div class="text-center mb-5 select-none">
-        <span class="star-gold text-3xl">⭐</span><span class="star-gold text-3xl">⭐</span><span class="star-gold text-3xl">⭐</span><span class="star-gold text-3xl">⭐</span><span class="star-gold text-3xl">⭐</span>
-        <p class="text-xs text-gray-400 mt-1">Calificación perfecta de nuestra comunidad</p>
-    </div>
-    <div class="flex flex-col gap-3 max-w-md mx-auto mb-5">
-        <div class="bg-crema rounded-2xl p-4 shadow-sm">
-            <p class="text-sm text-chocolate italic">"¡Las mejores donas de la feria! La combinación con Nutella y Oreo es increíble. Repetí dos veces."</p>
-            <p class="text-xs font-bold text-dona-rosa-fuerte mt-2">— Ana, 3° de Secundaria</p>
-        </div>
-        <div class="bg-crema rounded-2xl p-4 shadow-sm">
-            <p class="text-sm text-chocolate italic">"Pedí la Caja Fiesta para mi equipo y todos quedaron encantados. Súper recomendadas."</p>
-            <p class="text-xs font-bold text-dona-rosa-fuerte mt-2">— Luis, 5° de Primaria</p>
-        </div>
-    </div>
-    <div class="text-center max-w-md mx-auto">
-        <div class="bg-gradient-to-r from-yellow-50 to-orange-50 border-2 border-dashed border-dorado rounded-2xl p-5">
-            <p class="font-extrabold text-chocolate text-lg mb-1">⭐ ¡Déjanos tu reseña en el stand!</p>
-            <p class="text-sm text-chocolate-claro">Al recoger tus donas, déjanos tu opinión y <strong class="text-dona-rosa-fuerte">recibe un topping extra gratis</strong> en tu próxima orden.</p>
-        </div>
-    </div>
-</section>
 
 <!-- ==================== SECCIÓN 6: EQUIPO ==================== -->
 <section class="bg-crema px-5 py-8">
@@ -700,13 +655,6 @@ onclick="seleccionarPaquete(this)" role="button" tabindex="0" aria-pressed="fals
         </p>
         <p class="text-xs text-gray-500 mt-2">*Válido durante la feria. Menciona la promo al pedir.</p>
     </div>
-    <div class="text-center max-w-md mx-auto mb-4" id="cta-section-boton">
-        <button id="btn-whatsapp-seccion" onclick="enviarPedidoWhatsApp()"
-        class="btn-cta-glow w-full bg-whatsapp hover:bg-whatsapp-oscuro text-white font-extrabold text-xl px-8 py-5 rounded-2xl shadow-2xl hover:shadow-3xl active:scale-95 transition-all duration-300 flex items-center justify-center gap-3 cursor-pointer border-none">
-        <span class="text-2xl">🟢</span> Enviar mi pedido por WhatsApp Ahora
-    </button>
-    <p class="text-xs text-gray-400 mt-3">✅ Sin registro · Sin complicaciones · Directo a tu chat</p>
-</div>
 </section>
 
 <!-- ==================== FOOTER ==================== -->
@@ -719,16 +667,6 @@ onclick="seleccionarPaquete(this)" role="button" tabindex="0" aria-pressed="fals
     <p class="text-xs text-gray-400 mt-3">© 2025 Equipo Donitas Mágicas 🍩✨</p>
 </footer>
 
-<!-- ==================== STICKY CTA BAR ==================== -->
-<div class="sticky-cta-bar" id="stickyCtaBar">
-    <div class="max-w-md mx-auto">
-        <button id="btn-whatsapp-sticky" onclick="enviarPedidoWhatsApp()"
-        class="btn-cta-glow w-full bg-whatsapp hover:bg-whatsapp-oscuro text-white font-extrabold text-lg px-6 py-4 rounded-2xl shadow-xl hover:shadow-2xl active:scale-95 transition-all duration-300 flex items-center justify-center gap-3 cursor-pointer border-none">
-        <span class="text-xl">🟢</span> Enviar mi pedido por WhatsApp
-    </button>
-</div>
-</div>
-
 <!-- ==================== JAVASCRIPT ==================== -->
 <script>
     (function() {
@@ -739,7 +677,6 @@ onclick="seleccionarPaquete(this)" role="button" tabindex="0" aria-pressed="fals
         const PRECIOS_TOPPING = { 'Cajeta (+$10)': 10, 'Nutella (+$10)': 10, 'Fresas picadas (+$15)': 15 };
 
         const paqueteCards = document.querySelectorAll('.paquete-card');
-        const stickyCtaBar = document.getElementById('stickyCtaBar');
         const toastEl = document.getElementById('toast');
         const toppingsContainer = document.getElementById('toppings-container');
         const resumenPaquete = document.getElementById('resumen-paquete');
@@ -828,12 +765,6 @@ onclick="seleccionarPaquete(this)" role="button" tabindex="0" aria-pressed="fals
 
             paqueteSeleccionado = { key: paqueteKey, nombre: nombrePaquete, mensaje: mensaje };
 
-            const stickyBtn = document.getElementById('btn-whatsapp-sticky');
-            if (stickyBtn) {
-                stickyBtn.style.transform = 'scale(1.03)';
-                setTimeout(() => { stickyBtn.style.transform = 'scale(1)'; }, 200);
-            }
-
             mostrarToast('✅ ¡' + nombrePaquete + ' seleccionado!', 'success');
             actualizarResumen();
 
@@ -902,30 +833,6 @@ onclick="seleccionarPaquete(this)" role="button" tabindex="0" aria-pressed="fals
                 if (paqueteSeleccionado && this.checked) mostrarToast('🌈 ¡Topping agregado!', 'success');
             });
         });
-
-        // ============ STICKY BAR CONTROL ============
-        let ticking = false;
-        function actualizarStickyBar() {
-            const scrollY = window.scrollY;
-            const windowHeight = window.innerHeight;
-            const documentHeight = document.documentElement.scrollHeight;
-            if (scrollY + windowHeight >= documentHeight - 100 || scrollY < 300) {
-                stickyCtaBar.classList.add('hidden-bar');
-            } else {
-                stickyCtaBar.classList.remove('hidden-bar');
-            }
-            ticking = false;
-        }
-        window.addEventListener('scroll', () => {
-            if (!ticking) { requestAnimationFrame(actualizarStickyBar); ticking = true; }
-        }, { passive: true });
-        stickyCtaBar.classList.add('hidden-bar');
-        setTimeout(() => {
-            if (window.scrollY < 300) {
-                stickyCtaBar.classList.remove('hidden-bar');
-                setTimeout(() => { if (window.scrollY < 300) stickyCtaBar.classList.add('hidden-bar'); }, 3000);
-            }
-        }, 3500);
 
         // ============ TECLADO ============
         paqueteCards.forEach(card => {
